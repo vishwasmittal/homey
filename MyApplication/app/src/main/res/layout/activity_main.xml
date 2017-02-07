@@ -1,5 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background">
+
+    <Button
+        android:id="@+id/fan_button"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_button"
+        android:layout_alignStart="@+id/tv_button"
+        android:layout_below="@+id/tv_button"
+        android:layout_marginTop="120dp"
+        android:background="#37474F"
+        android:text="FAN : On"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:id="@+id/tv_button"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:background="#37474F"
+        android:text="TV : On"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:id="@+id/light_button"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/fan_button"
+        android:layout_alignStart="@+id/fan_button"
+        android:layout_below="@+id/fan_button"
+        android:layout_marginTop="120dp"
+        android:background="#37474F"
+        android:text="LIGHT : On"
+        android:textColor="#ffffff" />
+
+    <EditText
+        android:id="@+id/edit_text_of_speech"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/send_button"
+        android:layout_toStartOf="@+id/send_button"
+        android:hint="Tap on Mic to Start!"
+        android:inputType="textPersonName"
+        android:textColor="#000"
+        android:textColorHint="#888" />
+
+    <ImageButton
+        android:id="@+id/send_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="14dp"
+        android:layout_marginRight="14dp"
+        android:layout_toLeftOf="@+id/speech_button"
+        android:layout_toStartOf="@+id/speech_button"
+        android:background="#37474F"
+        android:padding="10dp"
+        app:srcCompat="@drawable/submit_arrow" />
+
+    <ImageButton
+        android:id="@+id/speech_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:background="#37474F"
+        android:padding="10dp"
+        app:srcCompat="@drawable/mic" />
+
+</RelativeLayout>
+<!--
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -11,29 +100,251 @@
     tools:context="com.cryptonites.homey.cfd.MainActivity">
 
     <Button
-        android:text="Fan"
+        android:id="@+id/fan_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="49dp"
-        android:id="@+id/fan_button" />
+        android:elevation="14dp"
+        android:text="Fan" />
 
     <Button
-        android:text="Light"
+        android:id="@+id/light_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="98dp"
-        android:id="@+id/light_button"
+        android:layout_alignStart="@+id/fan_button"
         android:layout_below="@+id/fan_button"
-        android:layout_alignStart="@+id/fan_button" />
+        android:layout_marginTop="98dp"
+        android:text="Light" />
 
     <Button
-        android:text="TV"
+        android:id="@+id/tv_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/light_button"
         android:layout_marginBottom="90dp"
-        android:id="@+id/tv_button" />
+        android:text="TV" />
+
+    <EditText
+        android:id="@+id/edit_text_of_speech"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignEnd="@+id/tv_button"
+        android:layout_alignTop="@+id/speech_button"
+        android:layout_marginEnd="57dp"
+        android:ems="10"
+        android:hint="Tap mic. to speak"
+        android:inputType="textPersonName" />
+
+    <ImageButton
+        android:id="@+id/speech_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/tv_button"
+        android:layout_marginStart="61dp"
+        app:srcCompat="@android:drawable/ic_btn_speak_now" />
+
+    <ImageButton
+        android:id="@+id/send_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="17dp"
+        android:layout_toEndOf="@+id/speech_button"
+        app:srcCompat="@android:drawable/ic_menu_send" />
 </RelativeLayout>
+RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/oneplus"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.cryptonites.homey.cfd.JsoupActivity">
+
+    <Button
+        android:id="@+id/fan_button"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_button"
+        android:layout_alignStart="@+id/tv_button"
+        android:layout_below="@+id/tv_button"
+        android:layout_marginTop="120dp"
+        android:background="#37474F"
+        android:text="FAN : On"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:id="@+id/tv_button"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:background="#37474F"
+        android:text="TV : On"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:id="@+id/light_button"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/fan_button"
+        android:layout_alignStart="@+id/fan_button"
+        android:layout_below="@+id/fan_button"
+        android:layout_marginTop="120dp"
+        android:background="#37474F"
+        android:text="LIGHT : On"
+        android:textColor="#ffffff" />
+
+    <EditText
+        android:id="@+id/editTextOfSpeech"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/send_button"
+        android:layout_toStartOf="@+id/send_button"
+        android:hint="Tap on Mic to Start!"
+        android:inputType="textPersonName"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF" />
+
+    <ImageButton
+        android:id="@+id/send_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="14dp"
+        android:layout_marginRight="14dp"
+        android:layout_toLeftOf="@+id/speech_button"
+        android:layout_toStartOf="@+id/speech_button"
+        android:background="#37474F"
+        android:padding="10dp"
+        app:srcCompat="@drawable/submit_arrow" />
+
+    <ImageButton
+        android:id="@+id/speech_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:background="#37474F"
+        android:padding="10dp"
+        app:srcCompat="@drawable/mic" />
+
+</RelativeLayout>
+-->
+
+    <!--
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_jsoup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="com.cryptonites.homey.cfd.JsoupActivity">
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="59dp"
+            android:id="@+id/jsoupText" />
+    </RelativeLayout>
+    -->
+
+<!--<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.cryptonites.homey.cfd.MainActivity">
+
+    <Button
+        android:id="@+id/fan_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="49dp"
+        android:elevation="14dp"
+        android:text="Fan" />
+
+    <Button
+        android:id="@+id/light_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/fan_button"
+        android:layout_below="@+id/fan_button"
+        android:layout_marginTop="98dp"
+        android:text="Light" />
+
+    <Button
+        android:id="@+id/tv_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/light_button"
+        android:layout_marginBottom="90dp"
+        android:text="TV" />
+
+    <Button
+        android:id="@+id/jsoupActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/fan_button"
+        android:layout_alignParentTop="true"
+        android:onClick="callJsoup"
+        android:text="Jsoup Activity" />
+
+    <EditText
+        android:id="@+id/edit_text_of_speech"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignEnd="@+id/tv_button"
+        android:layout_alignTop="@+id/speech_button"
+        android:layout_marginEnd="57dp"
+        android:ems="10"
+        android:hint="Tap mic. to speak"
+        android:inputType="textPersonName" />
+
+    <ImageButton
+        android:id="@+id/speech_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/tv_button"
+        android:layout_marginStart="61dp"
+        app:srcCompat="@android:drawable/ic_btn_speak_now" />
+
+    <ImageButton
+        android:id="@+id/send_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="17dp"
+        android:layout_toEndOf="@+id/speech_button"
+        app:srcCompat="@android:drawable/ic_menu_send" />
+</RelativeLayout>
+-->
