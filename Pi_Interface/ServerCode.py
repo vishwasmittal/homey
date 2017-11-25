@@ -1,8 +1,7 @@
 import socket
 import json
-from Appliance import Appliance
+from Pi_Interface.Appliance import Appliance
 import RPi.GPIO as GPIO
-
 
 GPIO.cleanup()
 GPIO.setmode(GPIO.BCM)
@@ -34,13 +33,13 @@ port = 8000
 try:
     serverSocket.bind((host, port))
 except socket.error as e:
-    print e
-    print "exception in binding to server"
+    print(e)
+    print("exception in binding to server")
     s = socket.gethostname()
-    print s
+    print(s)
     serverSocket.bind((s, port))
 
-print ("Host name: %s" % host)
+print("Host name: %s" % host)
 
 serverSocket.listen(0)
 
@@ -49,16 +48,16 @@ serverSocket.listen(0)
 
 while True:
     try:
-        print "inside Loop"
+        print("inside Loop")
         (clientSocket, address) = serverSocket.accept()
-        print ("Client with address: %s connected and address[1]= %d" % (address[0], address[1]))
+        print("Client with address: %s connected and address[1]= %d" % (address[0], address[1]))
         received = clientSocket.recv(1024)
         applianceJson = json.loads(received)  # received JSON
-        print ("appliance request: %s" % received)
+        print("appliance request: %s" % received)
 
         x = applianceJson.__getitem__("applName")
         requestedAppliance = applianceArray[x]
-        print ("Original state: %s" % requestedAppliance.__getStringObject__())
+        print("Original state: %s" % requestedAppliance.__getStringObject__())
         if applianceJson["state"] == 'true':
             requestedState = True
             requestedAppliance.startLed()
@@ -69,10 +68,10 @@ while True:
         # also instruct the pi to do the turn the actuators
 
         clientSocket.send(requestedAppliance.__getStringObject__())
-        print requestedAppliance.__get__()
+        print(requestedAppliance.__get__())
         clientSocket.close()
     except socket.error as e:
-        print "exception"
+        print("exception")
         break
 
-print "Out of the loop"
+print("Out of the loop")

@@ -1,4 +1,4 @@
-class Appliance():
+class Appliance:
     def __init__(self, applName, state, powerLevel, pinNo):
         self.applName = applName
         self.state = state
