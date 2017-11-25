@@ -62,5 +62,5 @@ There is always scope of improvement in anything we do. Some of the improvements
 
 
 ### Some Glimpses
-![Homey home](https://github.com/vishwas78/homey/blob/master/images/screenshot_app_home.png "Home")
-![Voice Command](https://github.com/vishwas78/homey/blob/master/images/screenshot_app_voice.png "Voice Command")
+<img src = "https://github.com/vishwas78/homey/blob/master/images/screenshot_app_home.png" width = "300">
+<img src = "https://github.com/vishwas78/homey/blob/master/images/screenshot_app_voice.png" width = "300">

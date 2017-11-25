@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="265b359f-2cde-4968-8ae3-6fbaae8dd731" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Readme.md" afterPath="$PROJECT_DIR$/Readme.md" />
     </list>
     <ignored path="cfd.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,12 +45,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Readme" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Readme">
+      <file leaf-file-name="Readme.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Readme.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="477">
-                <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+              <first_editor relative-caret-position="441">
+                <caret line="64" column="91" lean-forward="true" selection-start-line="64" selection-start-column="91" selection-end-line="64" selection-end-column="91" />
                 <folding />
               </first_editor>
               <second_editor>
@@ -75,6 +76,7 @@
         <option value="$PROJECT_DIR$/Pi_Interface/ServerCode.py" />
         <option value="$PROJECT_DIR$/Pi_Interface/Appliance.py" />
         <option value="$PROJECT_DIR$/Readme" />
+        <option value="$PROJECT_DIR$/Readme.md" />
       </list>
     </option>
   </component>
@@ -375,11 +377,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Readme">
+    <entry file="file://$PROJECT_DIR$/Readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="477">
-            <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <first_editor relative-caret-position="441">
+            <caret line="64" column="91" lean-forward="true" selection-start-line="64" selection-start-column="91" selection-end-line="64" selection-end-column="91" />
             <folding />
           </first_editor>
           <second_editor>
