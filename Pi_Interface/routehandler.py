@@ -1,5 +1,6 @@
-from Pi_Interface.Appliance import Appliance
-from Pi_Interface import auth
+from Appliance import Appliance
+# from Pi_Interface \
+import auth
 
 authobj = auth.Authorization()
 
@@ -17,19 +18,21 @@ applianceArray = {
 def route_handle(status_t,route,applianceJson,clientsocket):
 
     if route == 'auth':
+        print ('inside auth')
         status, token = authobj.auth(applianceJson.__getitem__("user"))
+        print (status,token)
         if status:
-            clientsocket.send('{"token":%s}'%token)
+            clientsocket.send(('{"token":%s}'%token).encode())
         else:
-            clientsocket.send('{"error":"LOGIN FAILED"}')
+            clientsocket.send(b'{"error":"LOGIN FAILED"}')
 
     elif route == 'signup':
         status = authobj.signUp(applianceJson.__getitem__("user"))
 
         if status:
-            clientsocket.send('{"status":"SUCCESS"}')
+            clientsocket.send(b'{"status":"SUCCESS"}')
         else:
-            clientsocket.send('{"status":"USERNAME ALREADY EXISTS"}')
+            clientsocket.send(b'{"status":"USERNAME ALREADY EXISTS"}')
 
     elif status_t and route == 'app':
 
@@ -45,5 +48,6 @@ def route_handle(status_t,route,applianceJson,clientsocket):
         requestedAppliance.__setstate__(requestedState)
         # also instruct the pi to do the turn the actuators
 
-        clientsocket.send(requestedAppliance.__getStringObject__())
+        clientsocket.send((requestedAppliance.__getStringObject__()).encode())
         print(requestedAppliance.__get__())
+

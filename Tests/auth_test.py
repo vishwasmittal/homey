@@ -1,4 +1,4 @@
-import auth, tokens
+from Pi_Interface import auth, tokens
 
 user = {
     'user': 'test1',
@@ -18,6 +18,6 @@ if s:
 else:
     print('Not authed')
 
-# token = '15b1e817320170a1eef2ebd0c707ab27'
+token = '15b1e817320170a1eef2ebd0c707ab27'
 
-print(tokens.validate_token(token))
+tokens.
