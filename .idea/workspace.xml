@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="265b359f-2cde-4968-8ae3-6fbaae8dd731" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/format.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pi_Interface/ServerCode.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pi_Interface/ServerCode.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cfd.iml" beforeDir="false" afterPath="$PROJECT_DIR$/cfd.iml" afterDir="false" />
     </list>
     <ignored path="cfd.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,26 +32,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ServerCode.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pi_Interface/ServerCode.py">
+      <file leaf-file-name="routehandler.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pi_Interface/routehandler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="73" selection-start-line="73" selection-end-line="73" />
+            <state relative-caret-position="337">
+              <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
               <folding>
-                <element signature="e#0#13#0" expanded="true" />
+                <element signature="e#0#44#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routehandler.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Pi_Interface/routehandler.py">
+      <file leaf-file-name="format.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/format.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-              <folding>
-                <element signature="e#0#44#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="761">
+              <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -65,6 +60,18 @@
               <caret line="28" column="55" selection-start-line="28" selection-start-column="55" selection-end-line="28" selection-end-column="55" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ServerCode.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pi_Interface/ServerCode.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="491">
+              <caret line="66" column="54" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="54" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -97,6 +104,7 @@
         <option value="$PROJECT_DIR$/Pi_Interface/routes/AUTH.py" />
         <option value="$PROJECT_DIR$/Pi_Interface/routehandler.py" />
         <option value="$PROJECT_DIR$/Pi_Interface/ServerCode.py" />
+        <option value="$PROJECT_DIR$/format.txt" />
       </list>
     </option>
   </component>
@@ -249,8 +257,8 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32973805" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13143776" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3289941" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13090129" />
       <window_info anchor="right" id="R Packages" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="right" id="R Graphics" />
@@ -278,34 +286,39 @@
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
     <layout-to-restore>
-      <window_info id="Designer" order="4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
+      <window_info anchor="right" id="R Packages" order="0" />
+      <window_info id="Designer" order="2" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info id="Image Layers" order="3" />
+      <window_info anchor="bottom" id="Run" order="4" />
+      <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="4" weight="0.25" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info anchor="right" id="Properties" order="6" />
+      <window_info id="Captures" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info id="Capture Tool" order="3" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info id="Captures" order="6" weight="0.25" />
-      <window_info id="Nl-Palette" order="2" />
-      <window_info id="Structure" order="1" weight="0.25" />
-      <window_info anchor="right" id="Commander" order="2" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Run" order="3" />
-      <window_info id="Image Layers" order="5" />
-      <window_info anchor="right" id="Data View" order="1" />
-      <window_info anchor="right" id="Properties" order="5" />
-      <window_info anchor="bottom" id="Find" order="2" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25302115" />
-      <window_info anchor="right" id="Database" order="0" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info id="Favorites" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Python Console" order="0" />
+      <window_info anchor="right" id="Commander" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="5" weight="0.25" />
+      <window_info anchor="right" id="Data View" order="8" />
+      <window_info anchor="right" id="Database" order="9" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info id="Nl-Palette" order="7" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3289941" />
+      <window_info anchor="bottom" id="Find" order="3" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13143776" />
+      <window_info anchor="right" id="SciView" order="1" />
+      <window_info anchor="right" id="R Graphics" order="2" />
+      <window_info anchor="bottom" id="Message" order="2" />
+      <window_info anchor="bottom" id="TODO" order="8" />
+      <window_info anchor="right" id="Palette&#9;" order="10" />
+      <window_info anchor="right" id="Theme Preview" order="11" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.4" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -350,9 +363,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cfd.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/MyApplication/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -384,6 +394,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Pi_Interface/routes/AUTH.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="29" selection-start-column="29" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cfd.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pi_Interface/routehandler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pi_Interface/ServerCode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="66" column="54" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Pi_Interface/auth.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
@@ -394,30 +437,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pi_Interface/routes/AUTH.py">
+    <entry file="file://$PROJECT_DIR$/format.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="29" selection-start-column="29" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pi_Interface/ServerCode.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pi_Interface/routehandler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="761">
+          <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
         </state>
       </provider>
     </entry>

@@ -65,9 +65,9 @@ while True:
 
             if not status_t:
                 clientSocket.send('{"error":"INVALID"}')
-
-            else:
-                clientSocket.send('{"username":%s}'%user)
+            #
+            # else:
+            #     clientSocket.send('{"username":%s}'%user)
 
         route = applianceJson.__getitem__("route")
         routehandler.route_handle(status_t,route,applianceJson,clientSocket)
