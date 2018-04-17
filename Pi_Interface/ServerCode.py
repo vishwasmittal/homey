@@ -2,6 +2,8 @@ import socket
 import json
 from Pi_Interface.Appliance import Appliance
 import RPi.GPIO as GPIO
+from Pi_Interface import auth, tokens
+
 
 GPIO.cleanup()
 GPIO.setmode(GPIO.BCM)
