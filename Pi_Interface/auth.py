@@ -6,74 +6,94 @@ import tokens
 USER FORMAT
 
 user = {
-	'user':'user-name',
-	'pass':'password'
+  'user':'user-name',
+  'pass':'password'
 }
 
 '''
 
 class Authorization:
 
-	def __init__():
-		print('Entered into authorization')
+  def __init__(self):
+    print('Entered into authorization')
 
-'''
-Return --> bool
-True -- if signed up
-False -- exception occured or user already exists
-'''
+  '''
+  Return --> bool
+  True -- if signed up
+  False -- exception occured or user already exists
+  '''
 
-	def signUp(self, user):
-		user = dict(user)
+  def signUp(self, user):
+    user = dict(user)
 
-		if set(['user','pass']).issubset(user.keys()) :
-			return False
+    if not set(['user','pass']).issubset(user.keys()) :
+      return False
 
-		fp = open('users.json','r+')
-		user_data = json.load(fp).get('users',[])
-		users = [i.get('user',None) for i in user_data]
+    try:
+      fp = open('../Users/users.json','r+')
+    except:
+      fp = open('../Users/users.json','w+')
 
-		try:
-			if user['user'] in users:
-				print('User already exists')
-				return False
+    try:
+      user_data = json.load(fp).get('users',[])
+    except:
+      user_data = []
+    
+    users = [i.get('user',None) for i in user_data]
 
-		except Exception as e:
-			print(e)
-			print('User format wrong when signing up')
-			return False
+    try:
+      if user['user'] in users:
+        print('User already exists')
+        return False
 
-		user_data.append(user)
+    except Exception as e:
+      print(e)
+      print('User format wrong when signing up')
+      return False
 
-		fp.seek(0)
-		json.dump({'users':user_data})
-		fp.close()
-		return True
+    user_data.append(user)
 
-'''
-Return ---> (bool,str)
-r[0] -- Logged in or not
-r[1] -- generated token else None
+    fp.seek(0)
+    json.dump({'users':user_data},fp)
+    fp.close()
+    return True
 
-Check the tokens.py for validating tokens.
-'''
+  '''
+  Return ---> (bool,str)
+  r[0] -- Logged in or not
+  r[1] -- generated token else None
 
-	def auth(self, user):
-		user = dict(user)
-		
-		if set(['user','pass']).issubset(user.keys()) :
-			return (False,None)
+  Check the tokens.py for validating tokens.
+  '''
 
-		user_data = json.load(open('users.json')).get('users',[])
-		user_index = [i for i in range(len(user_data)) if user_data[i].get('user',None) == user['user']][0]
+  def auth(self, user):
+    user = dict(user)
+    
+    if not set(['user','pass']).issubset(user.keys()) :
+      return (False,None)
 
-		if user['pass'] == user_data[user_index]['pass']:
-			user_token = tokens.generate_token()
-			
-			fp = open('user_tokens.json')
-			sessions = json.load(fp)
-			fp.close()
+    user_data = json.load(open('../Users/users.json')).get('users',[])
+    user_index = [i for i in range(len(user_data)) if user_data[i].get('user',None) == user['user']][0]
 
-			sessions.update({user['user'] : user_token})
+    if user['pass'] == user_data[user_index]['pass']:
+      user_token = tokens.generate_token()
+      
+      try:
+        fp = open('../Users/user_tokens.json','r+')
+      except:
+        fp = open('../Users/user_tokens.json','w+')
+      
+      try:
+        sessions = json.load(fp)
+      except:
+        sessions = {}
+      sessions.update({user['user'] : user_token})
+      
+      fp.seek(0)
+      json.dump(sessions,fp)
+      fp.close()
 
-			return (True,user_token)
+      return (True,user_token)
+
+    else:
+      return (False,None)
