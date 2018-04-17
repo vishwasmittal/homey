@@ -26,8 +26,8 @@ False -- exception occured or user already exists
 	def signUp(self, user):
 		user = dict(user)
 
-		if ['user','pass'] not in user.keys():
-			return false
+		if set(['user','pass']).issubset(user.keys()) :
+			return False
 
 		fp = open('users.json','r+')
 		user_data = json.load(fp).get('users',[])
