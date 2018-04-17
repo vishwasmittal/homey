@@ -1,0 +1,55 @@
+                auth
+send--
+{
+route: auth,
+user:{user:username,pass:password}
+}
+recv---
+
+    success
+{
+token:"token"
+}
+
+    failure
+{
+error:"LOGIN FAILED"
+}
+
+
+                signup
+send --
+{
+route: signup,
+user:{user:username,pass:password}
+}
+recv ----
+    success
+{
+status: "SUCCESS"
+}
+
+    failure
+{
+status: "USERNAME ALREADY EXISTS"
+}
+
+
+                app
+send --
+{
+route: app,
+token: "token",
+------- Usual contents -----
+}
+recv ----
+    success
+{
+------- Usual contents -----
+}
+
+    failure
+
+{
+error:"INVALID"
+}
