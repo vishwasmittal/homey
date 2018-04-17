@@ -67,6 +67,7 @@ class Authorization:
   '''
 
   def auth(self, user):
+    print(user)
     user = dict(user)
     
     if not set(['user','pass']).issubset(user.keys()) :

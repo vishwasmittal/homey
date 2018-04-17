@@ -28,7 +28,13 @@ class Appliance:
         return "{name: " + self.applName + ", state: " + strState + ", powerLevel: " + str(self.powerLevel) + "}\n"
 
     def startLed(self):
-        GPIO.output(self.pinNo, True)
+        try:
+            GPIO.output(self.pinNo, True)
+        except:
+            pass
 
     def stopLed(self):
-        GPIO.output(self.pinNo, False)
+        try:
+            GPIO.output(self.pinNo, False)
+        except:
+            pass

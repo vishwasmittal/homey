@@ -1,15 +1,16 @@
 import socket
 import json
 # from Pi_Interface.Appliance import Appliance
-import RPi.GPIO as GPIO
-from Pi_Interface import tokens,routehandler
+# import RPi.GPIO as GPIO
+# from Pi_Interface \
+import tokens,routehandler
 
-GPIO.cleanup()
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(6, GPIO.OUT)
-GPIO.setup(4, GPIO.OUT)
-GPIO.setup(27, GPIO.OUT)
-GPIO.setup(22, GPIO.OUT)
+# GPIO.cleanup()
+# GPIO.setmode(GPIO.BCM)
+# GPIO.setup(6, GPIO.OUT)
+# GPIO.setup(4, GPIO.OUT)
+# GPIO.setup(27, GPIO.OUT)
+# GPIO.setup(22, GPIO.OUT)
 
 # fan = Appliance("fan", False, 0, 4)
 # light = Appliance("light", False, 0, 27)
@@ -23,11 +24,12 @@ GPIO.setup(22, GPIO.OUT)
 
 
 serverSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+serverSocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 # host = '127.0.0.1'
-host = "192.168.0.112"
+# host = "192.168.0.112"
 # host = "192.168.43.89"
 # host = "192.168.1"
-# host = "0.0.0.1"
+host = "0.0.0.0"
 # port = 9999
 port = 8000
 
@@ -49,6 +51,7 @@ serverSocket.listen(0)
 # devices are to controlled from main thread and nothing is done without the consent of client
 
 while True:
+
     try:
         print("inside Loop")
         (clientSocket, address) = serverSocket.accept()
@@ -61,17 +64,18 @@ while True:
         status_t = False
 
         if token:
+            print(token)
             status_t, user = tokens.validate_token(token)
 
             if not status_t:
-                clientSocket.send('{"error":"INVALID"}')
+                clientSocket.send(b'{"error":"INVALID"}')
             #
             # else:
             #     clientSocket.send('{"username":%s}'%user)
 
         route = applianceJson.__getitem__("route")
+        print(route)
         routehandler.route_handle(status_t,route,applianceJson,clientSocket)
-
         # if route == 'auth':
         #     status, token = authobj.auth(applianceJson.__getitem__("user"))
         #
@@ -96,8 +100,15 @@ while True:
         #     clientSocket.send(requestedAppliance.__getStringObject__())
         #     print(requestedAppliance.__get__())
         clientSocket.close()
-    except socket.error as e:
-        print("exception")
-        break
 
+    except socket.error as e:
+        print(e)
+        print("exception")
+        serverSocket.close()
+        break
+    except KeyboardInterrupt:
+        serverSocket.close()
+    except Exception as e:
+        print(e)
+        serverSocket.close()
 print("Out of the loop")
