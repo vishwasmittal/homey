@@ -52,7 +52,7 @@ False -- exception occured or user already exists
 
 '''
 Return ---> (bool,str)
-r[0] -- signed up or not
+r[0] -- Logged in or not
 r[1] -- generated token else None
 
 Check the tokens.py for validating tokens.
