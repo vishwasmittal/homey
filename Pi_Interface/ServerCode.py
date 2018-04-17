@@ -1,7 +1,8 @@
 import socket
 import json
-from Pi_Interface.Appliance import Appliance
+# from Pi_Interface.Appliance import Appliance
 import RPi.GPIO as GPIO
+from Pi_Interface import tokens,routehandler
 
 GPIO.cleanup()
 GPIO.setmode(GPIO.BCM)
@@ -10,15 +11,16 @@ GPIO.setup(4, GPIO.OUT)
 GPIO.setup(27, GPIO.OUT)
 GPIO.setup(22, GPIO.OUT)
 
-fan = Appliance("fan", False, 0, 4)
-light = Appliance("light", False, 0, 27)
-tv = Appliance("tv", False, 0, 22)
+# fan = Appliance("fan", False, 0, 4)
+# light = Appliance("light", False, 0, 27)
+# tv = Appliance("tv", False, 0, 22)
+#
+# applianceArray = {
+#     "fan": fan,
+#     "tv": tv,
+#     "light": light
+# }
 
-applianceArray = {
-    "fan": fan,
-    "tv": tv,
-    "light": light
-}
 
 serverSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # host = '127.0.0.1'
@@ -55,20 +57,44 @@ while True:
         applianceJson = json.loads(received)  # received JSON
         print("appliance request: %s" % received)
 
-        x = applianceJson.__getitem__("applName")
-        requestedAppliance = applianceArray[x]
-        print("Original state: %s" % requestedAppliance.__getStringObject__())
-        if applianceJson["state"] == 'true':
-            requestedState = True
-            requestedAppliance.startLed()
-        else:
-            requestedState = False
-            requestedAppliance.stopLed()
-        requestedAppliance.__setstate__(requestedState)
-        # also instruct the pi to do the turn the actuators
+        token = applianceJson.get('token',None)
+        status_t = False
 
-        clientSocket.send(requestedAppliance.__getStringObject__())
-        print(requestedAppliance.__get__())
+        if token:
+            status_t, user = tokens.validate_token(token)
+
+            if not status_t:
+                clientSocket.send('{"error":"INVALID"}')
+
+            else:
+                clientSocket.send('{"username":%s}'%user)
+
+        route = applianceJson.__getitem__("route")
+        routehandler.route_handle(status_t,route,applianceJson,clientSocket)
+
+        # if route == 'auth':
+        #     status, token = authobj.auth(applianceJson.__getitem__("user"))
+        #
+        #
+        # elif route == 'signup':
+        #     status = authobj.signUp(applianceJson.__getitem__("user"))
+        #
+        # if status_t:
+        #
+        #     x = applianceJson.__getitem__("applName")
+        #     requestedAppliance = applianceArray[x]
+        #     print("Original state: %s" % requestedAppliance.__getStringObject__())
+        #     if applianceJson["state"] == 'true':
+        #         requestedState = True
+        #         requestedAppliance.startLed()
+        #     else:
+        #         requestedState = False
+        #         requestedAppliance.stopLed()
+        #     requestedAppliance.__setstate__(requestedState)
+        #     # also instruct the pi to do the turn the actuators
+        #
+        #     clientSocket.send(requestedAppliance.__getStringObject__())
+        #     print(requestedAppliance.__get__())
         clientSocket.close()
     except socket.error as e:
         print("exception")
