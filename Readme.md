@@ -1,6 +1,6 @@
 Homey
 =====
-Your personal assistant with sole purpose to make your home smarter and your life easy than ever before. It gives you the power to control your house with just a single touch or just a command of your voice. If your are feeling lazy enough to switch off the lights before going to sleep, worry not, homey will do that for you on your single command.
+Your personal assistant with sole purpose to make your home smarter and your life easy then ever before. It gives you the power to control your house with just a single touch or just a command of your voice. If your are feeling lazy enough to switch off the lights before going to sleep, worry not, homey will do that for you on your single command.
 
 
 Contents
