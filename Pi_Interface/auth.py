@@ -22,7 +22,7 @@ class Authorization:
   True -- if signed up
   False -- exception occured or user already exists
   '''
-
+  # function to sign up through server
   def signUp(self, user):
     user = dict(user)
 
